@@ -7,6 +7,10 @@ thread::thread(void)
 
 thread::~thread(void)
 {
+	if (handle_)
+	{
+		CloseHandle(handle_);
+	}
 }
 
 bool thread::create(LPVOID param)
